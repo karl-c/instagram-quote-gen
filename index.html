@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Own CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Random Quote Generator</title>
+  </head>
+  <body onload="genQuote(); genImage();">
+
+    <div class="outer-container container-fluid p-0">
+      <div class="inner-container container-fluid mx-auto p-0">
+        <p id="quote-display" class="quote-text text-center px-4"></p>
+        <div class="circle position-absolute">
+          <img class="logo position-absolute" src="img/logo.png" alt="Serenity Self Care">
+        </div>
+      </div>
+
+      <div class="options-container container-fluid mx-auto p-0 mt-4">
+        <button id="new-post" type="button" class="btn button button-post btn-lg btn-block">New Post</button>
+        <button id="new-image" type="button" class="btn button button-image">Change Image</button>
+        <button id="new-quote" type="button" class="btn button button-quote">Change Quote</button>
+      </div>
+
+      <footer class="footer">
+        <p class="copyright">Created with <span class="red">&hearts;</span> by Karl Chelton</p>
+      </footer>
+
+    </div>
+
+    <!-- jQuery first, then Bootstrap JS, then Quotes JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/post-generation.js"></script>
+  </body>
+</html>
