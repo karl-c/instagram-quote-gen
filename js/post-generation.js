@@ -81,11 +81,37 @@ var quotes = [
   'If you can change your mind, you can change your life.',
   'When we are no longer able to change a situation, we are challenged to change ourselves.',
   'Happiness often sneaks in through a door you didn\'t know you left open.',
-  'The best way to gain self-confidence is to do what you are afraid to do.'
+  'The best way to gain self-confidence is to do what you are afraid to do.',
+  'Recognizing that you are not where you want to be is a starting point to begin changing your life.',
+  'Positive energy is attracted to positive energy.',
+  'We do not learn for the benefit of anyone, we learn to unlearn ignorance.',
+  'It is better to heal than harm.',
+  'Keep on reinventing yourself.',
+  'If you have life and wellbeing, it is enough to be content.',
+  'If you ever find yourself in the wrong story, leave.',
+  'We know what we are but not what we may be.',
+  'I have not failed. I have just found 10,000 things that do not work.',
+  'The brain is wider than the sky.',
+  'Great spirits have often overcome violent opposition from mediocre minds.',
+  'I am not bound to succeed, but I am bound to live up to what light I have.',
+  'Don\'t become a mere recorder of facts, but try to penetrate the mystery of their origin.',
+  'The greatest discovery of my generation is that human beings can alter their lives by altering their attitudes of mind.',
+  'Much learning does not teach understanding.',
+  'Perhaps home is not a place but simply an irrevocable condition.',
+  'Every person takes the limits of his own field of vision for the limits of the world.',
+  'We can\'t win against obsession. They care, we don\'t. They win.',
+  'Whatever is rejected from the self, appears in the world as an event.',
+  'The best fighter is never angry.',
+  'Fear is the mind-killer.',
+  'Do your work, then step back. The only path to serenity.',
+  'Go in the direction of where your peace is coming from.'
 ]
 
-// Set the core image link
+// Set the core image link and other vars
 var imgLink = "https://picsum.photos/600/600/?image=";
+var ownQuote;
+var quoteInput = "#own-quote-input";
+var log = console.log.bind(console); // Temp to make debugging easier
 
 // Button click events
 $('#new-quote').on('click', function(){
@@ -101,10 +127,15 @@ $('#new-post').on('click', function(){
   genImage();
 });
 
+// Function to update quote text
+function updateQuote(quote) {
+  $('#quote-display')[0].innerHTML = '"' + quote + '"';
+}
+
 // Pick and display a new quote from the arrays above
 function genQuote() {
   var ranNum = Math.floor(Math.random() * (quotes.length));
-  document.getElementById('quote-display').innerHTML = '"' + quotes[ranNum] + '"';
+  updateQuote(quotes[ranNum]);
 }
 
 // Choose a random image number and pass it to isThis404
@@ -125,3 +156,14 @@ function isThis404(imgNum) {
     }
   });
 };
+
+// The following code handles the own quote option
+$('#own-quote-button').on('click', function(){
+  ownQuote = $(quoteInput).val();
+  if($(quoteInput).val() == "") {
+    $('.alert').removeClass('d-none');
+  } else {
+    $('.alert').addClass('d-none');
+    updateQuote(ownQuote);
+  }
+});

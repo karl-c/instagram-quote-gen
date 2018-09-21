@@ -3,6 +3,9 @@ $green: #418f61;
 $blue: #145e9a;
 $white: #fff;
 $grey: #242424;
+$pink: #af4c6f;
+$black: #333;
+$serenity-blue: #000fa0;
 
 $quote-font: lobster;
 
@@ -23,64 +26,85 @@ $quote-font: lobster;
   margin-top: 2em;
 }
 
+.inner-container,
+.options-container,
+.own-quote-container {
+  max-width: 400px;
+}
+
 .inner-container {
   box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, .4);
   color: $white;
-  font-family: $quote-font;
   font-size: 25px;
   height: 400px;
-  max-width: 400px;
   position: relative;
 
   .quote-text {
-    padding-top: 3em;
+    font-family: $quote-font;
+    padding-top: 4.5em;
   }
 
   .circle {
     @include center;
     background-color: $white;
-    border-top-left-radius: 200px;
-    border-top-right-radius: 200px;
-    bottom: 0;
-    height: 80px;
-    width: 200px;
+
+    &-bottom {
+      border-top-left-radius: 200px;
+      border-top-right-radius: 200px;
+      bottom: 0;
+      height: 30px;
+      width: 200px;
+    }
+
+    &-top {
+      border-bottom-left-radius: 200px;
+      border-bottom-right-radius: 200px;
+      height: 50px;
+      top: 0;
+      width: 180px;
+    }
   }
 
   .logo {
     @include center;
-    bottom: 20px;
-    max-width: 150px;
+    bottom: 10px;
+    max-width: 120px;
+  }
+
+  .site-link {
+    @include center;
+    bottom: -10px;
+    color: $serenity-blue;
+    font-size: 12px;
   }
 }
 
-.options-container {
-  max-width: 400px;
-}
-
 .button {
+  color: $white;
   font-weight: bold;
   text-transform: uppercase;
 
   &-post {
     background-color: $green;
-    color: $white;
     margin-bottom: 10px;
   }
 
   &-quote,
   &-image {
-    width: 49.3%;
     margin-bottom: 2em;
+    width: 49.3%;
   }
 
   &-image {
     background-color: $blue;
-    color: $white;
   }
 
   &-quote {
     background-color: $blue;
-    color: $white;
+  }
+
+  &-own-quote {
+    background-color: $pink;
   }
 
   &:hover {
@@ -94,12 +118,38 @@ $quote-font: lobster;
   color: $white;
 
   .copyright {
-    padding: 10px 0;
     margin: 0;
+    padding: 10px 0;
     text-align: center;
   }
 }
 
 .red {
   color: red;
+}
+
+.divider {
+  overflow: hidden;
+  text-align: center;
+
+  &::before,
+  &::after {
+    background-color: $black;
+    content: ' ';
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+  &::before {
+    margin-left: -50%;
+    right: .5em;
+  }
+
+  &::after {
+    left: .5em;
+    margin-right: -50%;
+  }
 }

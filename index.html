@@ -18,8 +18,11 @@
     <div class="outer-container container-fluid p-0">
       <div class="inner-container container-fluid mx-auto p-0">
         <p id="quote-display" class="quote-text text-center px-4"></p>
-        <div class="circle position-absolute">
+        <div class="circle circle-top position-absolute">
           <img class="logo position-absolute" src="img/logo.png" alt="Serenity Self Care">
+        </div>
+        <div class="circle circle-bottom position-absolute">
+          <p class="site-link position-absolute">serenityselfcare.org.uk</p>
         </div>
       </div>
 
@@ -27,9 +30,21 @@
         <button id="new-post" type="button" class="btn button button-post btn-lg btn-block">New Post</button>
         <button id="new-image" type="button" class="btn button button-image">Change Image</button>
         <button id="new-quote" type="button" class="btn button button-quote">Change Quote</button>
+        <p class="divider text-center">Or</p>
       </div>
 
-      <footer class="footer">
+      <div class="own-quote-container mx-auto">
+        <input type="text" class="form-control col-7 d-inline-block" id="own-quote-input" placeholder="Enter your own quote">
+        <button id="own-quote-button" type="button" class="btn button button-own-quote d-inline-block mb-1">Update Post</button>
+        <div class="alert alert-danger alert-dismissible fade show mt-4 d-none" role="alert">
+          <strong>Oops!</strong> Please make sure that you have entered text in the quote field before tapping update.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+
+      <footer class="footer mt-4">
         <p class="copyright">Created with <span class="red">&hearts;</span> by Karl Chelton</p>
       </footer>
 
